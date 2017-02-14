@@ -5,18 +5,18 @@ Connect mongoose to a MongoDB instance using the default settings:
 ```js
 
 const express = require('express');
-const MongooseClient = require('mongoose-connection-promise');
+const MongooseConnection = require('mongoose-connection-promise');
 
 const app = express();
 
 // Initialize using the default settings, which is assuming MongoDB to run
 // at mongodb://localhost:27017
-const mongooseClient = new MongooseClient();
+const mongooseConnection = new MongooseConnection();
 
-console.log(mongooseClient.config.host); // Returns localhost
-console.log(mongooseClient.config.port): // Returns 27017
+console.log(mongooseConnection.config.host); // Returns localhost
+console.log(mongooseConnection.config.port): // Returns 27017
 
-mongooseClient.connect()
+mongooseConnection.connect()
   .then(connection => {
     app.db = connection;
     const port = 3003;
@@ -38,7 +38,7 @@ mongooseClient.connect()
 Pass in options:
 
 ```js
-const MongooseClient = require('mongoose-connection-promise');
+const MongooseConnection = require('mongoose-connection-promise');
 
 const opts = {
   username: 'foo',
@@ -48,9 +48,9 @@ const opts = {
   debug: true
 };
 
-const mongooseClient = new MongooseClient(opts);
+const mongooseConnection = new MongooseConnection(opts);
 
-mongooseClient.connect()
+mongooseConnection.connect()
   .then(connection => {
     // successfully connected
   })

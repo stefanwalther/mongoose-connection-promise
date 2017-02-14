@@ -11,6 +11,7 @@
 - [Install](#install)
 - [Usage](#usage)
 - [API](#api)
+- [Test](#test)
 - [Author](#author)
 - [License](#license)
 
@@ -39,18 +40,18 @@ Connect mongoose to a MongoDB instance using the default settings:
 
 ```js
 const express = require('express');
-const MongooseClient = require('mongoose-connection-promise');
+const MongooseConnection = require('mongoose-connection-promise');
 
 const app = express();
 
 // Initialize using the default settings, which is assuming MongoDB to run
 // at mongodb://localhost:27017
-const mongooseClient = new MongooseClient();
+const mongooseConnection = new MongooseConnection();
 
-console.log(mongooseClient.config.host); // Returns localhost
-console.log(mongooseClient.config.port): // Returns 27017
+console.log(mongooseConnection.config.host); // Returns localhost
+console.log(mongooseConnection.config.port): // Returns 27017
 
-mongooseClient.connect()
+mongooseConnection.connect()
   .then(connection => {
     app.db = connection;
     const port = 3003;
@@ -70,7 +71,7 @@ mongooseClient.connect()
 Pass in options:
 
 ```js
-const MongooseClient = require('mongoose-connection-promise');
+const MongooseConnection = require('mongoose-connection-promise');
 
 const opts = {
   username: 'foo',
@@ -80,9 +81,9 @@ const opts = {
   debug: true
 };
 
-const mongooseClient = new MongooseClient(opts);
+const mongooseConnection = new MongooseConnection(opts);
 
-mongooseClient.connect()
+mongooseConnection.connect()
   .then(connection => {
     // successfully connected
   })
@@ -93,11 +94,7 @@ mongooseClient.connect()
 
 ## API
 
-### [MongooseClient](lib/index.js#L20)
-
-_MongooseClient_
-
-### [Configuration](lib/index.js#L49)
+### [Configuration](lib/index.js#L65)
 
 Define a configuration object to pass to the constructor.
 
@@ -111,7 +108,16 @@ const defaultOpts = {
    debug: false,
    host: 'localhost',
    port: 27017,
-   database: ''
+   database: '',
+   connectOptions: {
+     db: {},
+     server: {},
+     replset: {},
+     user: {},
+     pass: {},
+     auth: {},
+     mongos: {}
+   }
 };
 ```
 
@@ -119,44 +125,59 @@ const defaultOpts = {
 
 * `opts` **{Object}**: Options to pass in.
 * `opts.debug` **{Boolean}**: Whether MongoDB runs in debug mode or not.
-* `opts.host` **{String}**: The MongoDB host, defaults to `localhost`.  See the mongodb [connection string spec](https://docs.mongodb.com/manual/reference/connection-string/) for more details.
+* `opts.host` **{String}**: The MongoDBhost, defaults to `localhost`.  See the mongodb [connection string spec](https://docs.mongodb.com/manual/reference/connection-string/) for more details.
 * `opts.port` **{Number}**: The MongoDB port, defaults to `27017`.  See the mongodb [connection string spec](https://docs.mongodb.com/manual/reference/connection-string/) for more details.
 * `opts.database` **{String}**: The MongoDB database, defaults to `admin`.  See the mongodb [connection string spec](https://docs.mongodb.com/manual/reference/connection-string/) for more details.
+* `opts.connectOptions` **{Object}**: The MongoDB connection properties, being passed through to the native MongoDB driver. See [mongoose' documentation](http://mongoosejs.com/docs/connections.html), resp. [MongoDB's native driver for node.js' documentation](https://github.com/mongodb/node-mongodb-native) for more details.
 
-### [.constructor()](lib/index.js#L57)
+### [.constructor()](lib/index.js#L74)
 
-Initialize a new MongooseClient.
+Initialize a new MongooseConnection.
 
 **Params**
 
-* **{Object}**: opts - Options to initialize _MongooseClient_.
+* **{Configuration}**: opts - Options to initialize _MongooseConnection_.
 
-### [.connect()](lib/index.js#L73)
+### [.connect()](lib/index.js#L90)
 
 Connect mongoose to the given instance of MongoDB.
 
 * `returns` **{Promise}**
 
-### [.get()](lib/index.js#L95)
+### [.get()](lib/index.js#L112)
 
 Get an existing connection or create a new one.
 
-In contrary to `.connect()` this method will not create a new connection if MongooseClient is already connected,
+In contrary to `.connect()` this method will not create a new connection if MongooseConnection is already connected,
 but the existing connection will be re-used and returned.
 
-* `returns` **{Promise<NavtiveConnection>}**: Returns the connection to MongoDB.
+* `returns` **{Promise<NavtiveConnection,Error>}**: Returns the connection to MongoDB.
 
-### [.disconnect()](lib/index.js#L109)
+### [.disconnect()](lib/index.js#L126)
 
-Disconnect mongoose.
+Disconnects all mongoose connections.
 
-* `returns` **{Promise}**
+* `returns` **{Promise<void,Error>}**
 
-### [.isConnected()](lib/index.js#L120)
+### [.isConnected()](lib/index.js#L137)
 
-Return whether MongooseClient's connection is currently connected and ready to use or not.
+Indicates whether there is a current and ready-to-use mongoose connection.
 
 * `returns` **{boolean}**
+
+## Test
+
+Start the MongoDB docker container:
+
+```sh
+yarn dc-dev-up
+```
+
+Then run the tests:
+
+```
+yarn test
+```
 
 ## Author
 
