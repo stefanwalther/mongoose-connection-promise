@@ -5,6 +5,10 @@
 [![CircleCI](https://circleci.com/gh/stefanwalther/mongoose-connection-promise/tree/master.svg?style=svg)](https://circleci.com/gh/stefanwalther/mongoose-connection-promise/tree/master)
 [![XO code style](https://img.shields.io/badge/code_style-XO--space-5ed9c7.svg)](https://github.com/sindresorhus/xo-space)
 
+<details>
+
+</details>
+
 ## Install
 
 Install with [npm](http://npmjs.org/)
@@ -32,11 +36,11 @@ const MongooseClient = require('mongoose-connection-promise');
 
 _MongooseClient_
 
-### [options](lib/index.js#L31)
+### [Configuration](lib/index.js#L31)
 
 **Params**
 
-* **{Boolean}**: debug - Whether MongoDB runs in debug mode or not.
+* **{Boolean}**: opts.debug - Whether MongoDB runs in debug mode or not.
 
 ### [.constructor()](lib/index.js#L39)
 
@@ -67,7 +71,7 @@ Disconnect mongoose.
 
 * `returns` **{Promise}**
 
-### [isConnected()](lib/index.js#L102)
+### [.isConnected()](lib/index.js#L102)
 
 Return whether MongooseClient's connection is currently connected and ready to use or not.
 
