@@ -11,3 +11,5 @@ dependencies:
     - ~/.yarn-cache
   override:
     - yarn install
+  post:
+    - bash <(curl -s https://codecov.io/bash)
