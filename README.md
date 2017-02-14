@@ -97,13 +97,33 @@ mongooseClient.connect()
 
 _MongooseClient_
 
-### [Configuration](lib/index.js#L31)
+### [Configuration](lib/index.js#L49)
+
+Define a configuration object to pass to the constructor.
+
+If no options are defined, the default options will be used:
+
+**Example**
+
+```js
+// Default Options:
+const defaultOpts = {
+   debug: false,
+   host: 'localhost',
+   port: 27017,
+   database: ''
+};
+```
 
 **Params**
 
-* **{Boolean}**: opts.debug - Whether MongoDB runs in debug mode or not.
+* `opts` **{Object}**: Options to pass in.
+* `opts.debug` **{Boolean}**: Whether MongoDB runs in debug mode or not.
+* `opts.host` **{String}**: The MongoDB host, defaults to `localhost`.  See the mongodb [connection string spec](https://docs.mongodb.com/manual/reference/connection-string/) for more details.
+* `opts.port` **{Number}**: The MongoDB port, defaults to `27017`.  See the mongodb [connection string spec](https://docs.mongodb.com/manual/reference/connection-string/) for more details.
+* `opts.database` **{String}**: The MongoDB database, defaults to `admin`.  See the mongodb [connection string spec](https://docs.mongodb.com/manual/reference/connection-string/) for more details.
 
-### [.constructor()](lib/index.js#L39)
+### [.constructor()](lib/index.js#L57)
 
 Initialize a new MongooseClient.
 
@@ -111,13 +131,13 @@ Initialize a new MongooseClient.
 
 * **{Object}**: opts - Options to initialize _MongooseClient_.
 
-### [.connect()](lib/index.js#L55)
+### [.connect()](lib/index.js#L73)
 
 Connect mongoose to the given instance of MongoDB.
 
 * `returns` **{Promise}**
 
-### [.get()](lib/index.js#L77)
+### [.get()](lib/index.js#L95)
 
 Get an existing connection or create a new one.
 
@@ -126,13 +146,13 @@ but the existing connection will be re-used and returned.
 
 * `returns` **{Promise<NavtiveConnection>}**: Returns the connection to MongoDB.
 
-### [.disconnect()](lib/index.js#L91)
+### [.disconnect()](lib/index.js#L109)
 
 Disconnect mongoose.
 
 * `returns` **{Promise}**
 
-### [.isConnected()](lib/index.js#L102)
+### [.isConnected()](lib/index.js#L120)
 
 Return whether MongooseClient's connection is currently connected and ready to use or not.
 
