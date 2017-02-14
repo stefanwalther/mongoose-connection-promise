@@ -2,7 +2,11 @@
 
 > Convenience library to connect Mongoose to a MongoDB instance using promises.
 
-[![CircleCI](https://circleci.com/gh/stefanwalther/mongoose-connection-promise/tree/master.svg?style=svg)](https://circleci.com/gh/stefanwalther/mongoose-connection-promise/tree/master)
+[![NPM version](https://img.shields.io/npm/v/mongoose-connection-promise.svg?style=flat)](https://www.npmjs.com/package/mongoose-connection-promise)
+[![David](https://img.shields.io/david/stefanwalther/mongoose-connection-promise.svg)](https://github.com/stefanwalther/mongoose-connection-promise)
+[![CircleCI](https://img.shields.io/circleci/project/github/stefanwalther/mongoose-connection-promise.svg)](https://circleci.com/gh/stefanwalther/mongoose-connection-promise/tree/master)
+[![codecov](https://codecov.io/gh/stefanwalther/mongoose-connection-promise/branch/master/graph/badge.svg)](https://codecov.io/gh/stefanwalther/mongoose-connection-promise)
+[![Greenkeeper badge](https://badges.greenkeeper.io/stefanwalther/mongoose-connection-promise.svg)](https://greenkeeper.io/)
 [![XO code style](https://img.shields.io/badge/code_style-XO--space-5ed9c7.svg)](https://github.com/sindresorhus/xo-space)
 
 ## Table of Contents
