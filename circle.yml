@@ -4,7 +4,6 @@ machine:
   node:
     version: 7.2
 
-
 dependencies:
   pre:
     - curl -o- -L https://yarnpkg.com/install.sh | bash
