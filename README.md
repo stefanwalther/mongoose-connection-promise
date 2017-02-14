@@ -94,11 +94,12 @@ mongooseConnection.connect()
 
 ## API
 
-### [Configuration](lib/index.js#L65)
+### [Configuration](lib/index.js#L80)
 
 Define a configuration object to pass to the constructor.
 
 If no options are defined, the default options will be used:
+See [index.js => defaultOpts](index.js) for more information about the current default options.
 
 **Example**
 
@@ -111,7 +112,9 @@ const defaultOpts = {
    database: '',
    connectOptions: {
      db: {},
-     server: {},
+     server: {
+       auto_reconnect: true
+     },
      replset: {},
      user: {},
      pass: {},
@@ -130,7 +133,7 @@ const defaultOpts = {
 * `opts.database` **{String}**: The MongoDB database, defaults to `admin`.  See the mongodb [connection string spec](https://docs.mongodb.com/manual/reference/connection-string/) for more details.
 * `opts.connectOptions` **{Object}**: The MongoDB connection properties, being passed through to the native MongoDB driver. See [mongoose' documentation](http://mongoosejs.com/docs/connections.html), resp. [MongoDB's native driver for node.js' documentation](https://github.com/mongodb/node-mongodb-native) for more details.
 
-### [.constructor()](lib/index.js#L74)
+### [.constructor()](lib/index.js#L89)
 
 Initialize a new MongooseConnection.
 
@@ -138,13 +141,13 @@ Initialize a new MongooseConnection.
 
 * **{Configuration}**: opts - Options to initialize _MongooseConnection_.
 
-### [.connect()](lib/index.js#L90)
+### [.connect()](lib/index.js#L105)
 
 Connect mongoose to the given instance of MongoDB.
 
 * `returns` **{Promise}**
 
-### [.get()](lib/index.js#L112)
+### [.get()](lib/index.js#L127)
 
 Get an existing connection or create a new one.
 
@@ -153,13 +156,13 @@ but the existing connection will be re-used and returned.
 
 * `returns` **{Promise<NavtiveConnection,Error>}**: Returns the connection to MongoDB.
 
-### [.disconnect()](lib/index.js#L126)
+### [.disconnect()](lib/index.js#L141)
 
 Disconnects all mongoose connections.
 
 * `returns` **{Promise<void,Error>}**
 
-### [.isConnected()](lib/index.js#L137)
+### [.isConnected()](lib/index.js#L152)
 
 Indicates whether there is a current and ready-to-use mongoose connection.
 
