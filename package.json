@@ -1,7 +1,7 @@
 {
   "name": "mongoose-connection-promise",
   "version": "0.0.1",
-  "description": "Mongoose.connect using promises.",
+  "description": "Convenience library to connect Mongoose to a MongoDB instance using promises.",
   "main": "index.js",
   "repository": "https://github.com/stefanwalther/mongoose-connection-promise",
   "author": "Stefan Walther",
