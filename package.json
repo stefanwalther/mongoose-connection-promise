@@ -1,0 +1,67 @@
+{
+  "name": "mongoose-connection-promise",
+  "version": "0.0.1",
+  "description": "Mongoose.connect using promises.",
+  "main": "index.js",
+  "repository": "https://github.com/stefanwalther/mongoose-connection-promise",
+  "author": "Stefan Walther",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^4.8.2",
+    "promise-mongoose-connector": "^1.0.0",
+    "winster": "^0.2.5"
+  },
+  "keywords": [
+    "mongoose",
+    "promises"
+  ],
+  "engines": {
+    "node": ">=7.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.15.0",
+    "eslint-config-sammler": "^0.0.4",
+    "eslint-plugin-mocha": "^4.8.0",
+    "gulp-format-md": "^0.1.11",
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "lint": "yarn run lint:src && yarn run lint:test",
+    "lint:fix": "yarn run lint:src:fix && yarn run lint:test:fix",
+    "lint:src": "eslint src",
+    "lint:src:fix": "eslint src --fix",
+    "lint:test": "eslint test",
+    "lint:test:fix": "eslint test --fix",
+    "dc-dev-down": "docker-compose --f=./docker-compose.dev.yml down",
+    "dc-dev-up": "docker-compose --f=./docker-compose.dev.yml up --build",
+    "docs": "verb",
+    "test": "yarn run test:integration",
+    "test:integration": "mocha './test/integration/**/*.spec.js' --require './test/mocha.conf.js' --timeout 6000",
+    "test:unit": "mocha './test/unit/**/*.spec.js' --require './test/mocha.conf.js'"
+  },
+  "verb": {
+    "run": true,
+    "toc": false,
+    "layout": "empty",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "related": {
+      "list": []
+    },
+    "lint": {
+      "reflinks": true
+    },
+    "reflinks": [
+      "verb",
+      "verb-readme-generator"
+    ]
+  },
+  "winster": {
+    "configFile": "./lib/winster-config.js"
+  }
+}
