@@ -8,7 +8,6 @@
   "license": "MIT",
   "dependencies": {
     "mongoose": "^4.8.2",
-    "promise-mongoose-connector": "^1.0.0",
     "winster": "^0.2.5"
   },
   "keywords": [

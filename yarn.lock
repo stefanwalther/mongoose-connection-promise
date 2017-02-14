@@ -923,7 +923,7 @@ mongodb@2.2.22:
     mongodb-core "2.1.7"
     readable-stream "2.1.5"
 
-mongoose@^4.5.8, mongoose@^4.8.2:
+mongoose@^4.8.2:
   version "4.8.2"
   resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.8.2.tgz#d65e9e620867435369e41fc220ede29664118c58"
   dependencies:
@@ -1089,13 +1089,6 @@ process-nextick-args@~1.0.6:
 progress@^1.1.8:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/progress/-/progress-1.1.8.tgz#e260c78f6161cdd9b0e56cc3e0a85de17c7a57be"
-
-promise-mongoose-connector@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/promise-mongoose-connector/-/promise-mongoose-connector-1.0.0.tgz#974da6534844351effcbb60473886d7f2e4ca188"
-  dependencies:
-    chalk "^1.1.3"
-    mongoose "^4.5.8"
 
 ramda@^0.22.1:
   version "0.22.1"
