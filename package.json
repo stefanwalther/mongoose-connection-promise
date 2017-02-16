@@ -2,21 +2,33 @@
   "name": "mongoose-connection-promise",
   "version": "0.1.1",
   "description": "Convenience library to connect Mongoose to a MongoDB instance using promises.",
-  "main": "index.js",
-  "repository": "https://github.com/stefanwalther/mongoose-connection-promise",
-  "author": "Stefan Walther",
-  "license": "MIT",
-  "dependencies": {
-    "eslint-config-space-single": "^0.0.4",
-    "mongoose": "^4.8.2",
-    "winster": "^0.2.5"
-  },
   "keywords": [
     "mongoose",
     "promises"
   ],
-  "engines": {
-    "node": ">=7.2"
+  "license": "MIT",
+  "author": "Stefan Walther",
+  "main": "index.js",
+  "repository": "https://github.com/stefanwalther/mongoose-connection-promise",
+  "scripts": {
+    "dc-dev-down": "docker-compose --f=./docker-compose.dev.yml down",
+    "dc-dev-up": "docker-compose --f=./docker-compose.dev.yml up --build",
+    "docs": "verb",
+    "lint": "yarn run lint:src && yarn run lint:test",
+    "lint:fix": "yarn run lint:src:fix && yarn run lint:test:fix",
+    "lint:src": "eslint src",
+    "lint:src:fix": "eslint src --fix",
+    "lint:test": "eslint test",
+    "lint:test:fix": "eslint test --fix",
+    "test": "yarn run test:unit && yarn run test:integration",
+    "test-coverage": "istanbul cover node_modules/.bin/_mocha  --require ./test/mocha.conf.js -- -- -u exports -R spec test/**/* && codecov",
+    "test:integration": "mocha './test/integration/**/*.spec.js' --require './test/mocha.conf.js' --timeout 6000",
+    "test:unit": "mocha './test/unit/**/*.spec.js' --require './test/mocha.conf.js'"
+  },
+  "dependencies": {
+    "eslint-config-space-single": "^0.0.4",
+    "mongoose": "^4.8.2",
+    "winster": "^0.2.5"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -27,20 +39,8 @@
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0"
   },
-  "scripts": {
-    "lint": "yarn run lint:src && yarn run lint:test",
-    "lint:fix": "yarn run lint:src:fix && yarn run lint:test:fix",
-    "lint:src": "eslint src",
-    "lint:src:fix": "eslint src --fix",
-    "lint:test": "eslint test",
-    "lint:test:fix": "eslint test --fix",
-    "dc-dev-down": "docker-compose --f=./docker-compose.dev.yml down",
-    "dc-dev-up": "docker-compose --f=./docker-compose.dev.yml up --build",
-    "docs": "verb",
-    "test": "yarn run test:unit && yarn run test:integration",
-    "test-coverage": "istanbul cover node_modules/.bin/_mocha  --require ./test/mocha.conf.js -- -- -u exports -R spec test/**/* && codecov",
-    "test:integration": "mocha './test/integration/**/*.spec.js' --require './test/mocha.conf.js' --timeout 6000",
-    "test:unit": "mocha './test/unit/**/*.spec.js' --require './test/mocha.conf.js'"
+  "engines": {
+    "node": ">=7.2"
   },
   "verb": {
     "run": true,
