@@ -27,7 +27,7 @@
     "precommit": "yarn run docs"
   },
   "dependencies": {
-    "eslint-config-space-single": "^0.0.5",
+    "eslint-config-space-single": "^0.2.0",
     "mongoose": "^4.8.2",
     "winster": "^0.2.5"
   },
