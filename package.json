@@ -1,6 +1,6 @@
 {
   "name": "mongoose-connection-promise",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Convenience library to connect Mongoose to a MongoDB instance using promises.",
   "keywords": [
     "mongoose",
