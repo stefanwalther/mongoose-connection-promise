@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "eslint-config-space-single": "^0.2.0",
-    "mongoose": "^4.8.2",
+    "mongoose": "^4.11.9",
     "winster": "^0.2.5"
   },
   "files": [
