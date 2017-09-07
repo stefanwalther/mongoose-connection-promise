@@ -1,0 +1,11 @@
+v0.2.0:
+  date: "2017-08-08"
+  enhancements:
+    - "Adding CHANGELOG"
+    - "Exposing `defaultOptions`"
+  changes:
+    - "Use `useMongoClient: true` by default, which is required by version >= 4.11.0 of mongoose"
+v0.1.4:
+  date: "2017-03-17"
+  changes:
+    - "Initial version"

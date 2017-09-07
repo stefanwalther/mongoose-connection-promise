@@ -1,6 +1,6 @@
 {
   "name": "mongoose-connection-promise",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Convenience library to connect Mongoose to a MongoDB instance using promises.",
   "keywords": [
     "mongoose",
@@ -13,7 +13,7 @@
   "scripts": {
     "dc-dev-down": "docker-compose --f=./docker-compose.dev.yml down",
     "dc-dev-up": "docker-compose --f=./docker-compose.dev.yml up --build",
-    "docs": "verb",
+    "docs": "docker run --rm -v ${PWD}:/opt/verb stefanwalther/verb",
     "lint": "yarn run lint:src && yarn run lint:test",
     "lint:fix": "yarn run lint:src:fix && yarn run lint:test:fix",
     "lint:src": "eslint src",
