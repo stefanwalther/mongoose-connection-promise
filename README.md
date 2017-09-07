@@ -182,6 +182,12 @@ Indicates whether there is a current and ready-to-use mongoose connection.
 
 * `returns` **{boolean}**
 
+### [.defaultOptions()](lib/index.js#L164)
+
+Return the default options.
+
+* `returns`: object
+
 ## Test
 
 Start the MongoDB docker container:
