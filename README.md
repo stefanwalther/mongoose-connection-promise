@@ -155,13 +155,17 @@ Initialize a new MongooseConnection.
 
 * **{Configuration}**: opts - Options to initialize _MongooseConnection_.
 
-### [.connect()](lib/index.js#L106)
+### [.DEFAULT_OPTIONS](lib/index.js#L102)
+
+Returns the default options of mongoose-connection-promise
+
+### [.connect()](lib/index.js#L115)
 
 Connect mongoose to the given instance of MongoDB.
 
 * `returns` **{Promise}**
 
-### [.get()](lib/index.js#L128)
+### [.get()](lib/index.js#L137)
 
 Get an existing connection or create a new one.
 
@@ -170,21 +174,21 @@ but the existing connection will be re-used and returned.
 
 * `returns` **{Promise<NavtiveConnection,Error>}**: Returns the connection to MongoDB.
 
-### [.disconnect()](lib/index.js#L142)
+### [.disconnect()](lib/index.js#L151)
 
 Disconnects all mongoose connections.
 
 * `returns` **{Promise<void,Error>}**
 
-### [.isConnected()](lib/index.js#L153)
+### [.isConnected()](lib/index.js#L162)
 
 Indicates whether there is a current and ready-to-use mongoose connection.
 
 * `returns` **{boolean}**
 
-### [.defaultOptions()](lib/index.js#L164)
+### [.defaultOptions()](lib/index.js#L174)
 
-Return the default options.
+Return the default options (DEPRECATED).
 
 * `returns`: object
 

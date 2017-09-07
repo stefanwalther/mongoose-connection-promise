@@ -35,9 +35,17 @@ describe('Unit tests', () => {
     expect(client._getMongoUri_Database()).to.be.equal('/foobarbaz');
   });
 
-  it('defaultOptions => returns the default options', () => {
+  it('defaultOptions() => returns the default options', () => {
     const client = new MongooseConnection();
-    expect(client.defaultOptions()).to.exist;
-    expect(client.defaultOptions()).to.have.property('host').to.be.equal('localhost');
+    let defaultOptions = client.defaultOptions();
+    expect(defaultOptions).to.exist;
+    expect(defaultOptions).to.have.property('host').to.be.equal('localhost');
   });
+
+  it('DEFAULT_OPTIONS => returns the default options', () => {
+    const client = new MongooseConnection();
+    expect(client.DEFAULT_OPTIONS).to.exist;
+    expect(client.DEFAULT_OPTIONS).to.have.property('host').to.be.equal('localhost');
+  });
+
 });
