@@ -14,17 +14,17 @@
     "dc-dev-down": "docker-compose --f=./docker-compose.dev.yml down",
     "dc-dev-up": "docker-compose --f=./docker-compose.dev.yml up --build",
     "docs": "docker run --rm -v ${PWD}:/opt/verb stefanwalther/verb",
-    "lint": "yarn run lint:src && yarn run lint:test",
-    "lint:fix": "yarn run lint:src:fix && yarn run lint:test:fix",
+    "lint": "npm run lint:src && yarn run lint:test",
+    "lint:fix": "npm run lint:src:fix && npm run lint:test:fix",
     "lint:src": "eslint src",
     "lint:src:fix": "eslint src --fix",
     "lint:test": "eslint test",
     "lint:test:fix": "eslint test --fix",
-    "test": "yarn run test:unit && yarn run test:integration",
+    "test": "npm run test:unit && npm run test:integration",
     "test-coverage": "istanbul cover node_modules/.bin/_mocha  --require ./test/mocha.conf.js -- -- -u exports -R spec test/**/* && codecov",
     "test:integration": "mocha './test/integration/**/*.spec.js' --require './test/mocha.conf.js' --timeout 6000",
     "test:unit": "mocha './test/unit/**/*.spec.js' --require './test/mocha.conf.js'",
-    "precommit": "yarn run docs"
+    "precommit": "npm run docs"
   },
   "dependencies": {
     "eslint-config-space-single": "^0.2.0",
