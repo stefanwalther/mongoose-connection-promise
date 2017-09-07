@@ -155,7 +155,7 @@ Initialize a new MongooseConnection.
 
 * **{Configuration}**: opts - Options to initialize _MongooseConnection_.
 
-### [.DEFAULT_OPTIONS](lib/index.js#L102)
+### [.DEFAULT_CONFIG](lib/index.js#L102)
 
 Returns the default options of mongoose-connection-promise
 

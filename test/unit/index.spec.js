@@ -44,8 +44,9 @@ describe('Unit tests', () => {
 
   it('DEFAULT_OPTIONS => returns the default options', () => {
     const client = new MongooseConnection();
-    expect(client.DEFAULT_OPTIONS).to.exist;
-    expect(client.DEFAULT_OPTIONS).to.have.property('host').to.be.equal('localhost');
+    const defaultConfig = client.DEFAULT_CONFIG;
+    expect(defaultConfig).to.exist;
+    expect(defaultConfig).to.have.property('host').to.be.equal('localhost');
   });
 
 });
