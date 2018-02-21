@@ -35,7 +35,7 @@ describe('Unit tests', () => {
     expect(client._getMongoUri_Database()).to.be.equal('/foobarbaz');
   });
 
-  it('defaultOptions() => returns the default options', () => {
+  it('defaultOptions() => returns the default options (deprecated)', () => {
     const client = new MongooseConnection();
     let defaultOptions = client.defaultOptions();
     expect(defaultOptions).to.exist;

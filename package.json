@@ -11,8 +11,8 @@
   "main": "index.js",
   "repository": "https://github.com/stefanwalther/mongoose-connection-promise",
   "scripts": {
-    "dc-dev-down": "docker-compose --f=./docker-compose.dev.yml down",
-    "dc-dev-up": "docker-compose --f=./docker-compose.dev.yml up --build",
+    "dc-dev-down": "docker-compose --f=./docker-compose.yml down",
+    "dc-dev-up": "docker-compose --f=./docker-compose.yml up --build",
     "docs": "docker run --rm -v ${PWD}:/opt/verb stefanwalther/verb",
     "lint": "npm run lint:src && yarn run lint:test",
     "lint:fix": "npm run lint:src:fix && npm run lint:test:fix",
@@ -27,9 +27,8 @@
     "precommit": "npm run docs"
   },
   "dependencies": {
-    "eslint-config-space-single": "^0.2.0",
-    "mongoose": "^4.11.9",
-    "winster": "^0.2.5"
+    "mongoose": "4.13.11",
+    "winster": "^0.2.9"
   },
   "files": [
     "index.js",
@@ -37,13 +36,14 @@
   ],
   "devDependencies": {
     "chai": "^4.1.2",
-    "codecov": "^2.0.1",
-    "eslint": "^4.1.0",
-    "eslint-plugin-mocha": "^4.8.0",
+    "codecov": "3.0.0",
+    "eslint": "^4.18.1",
+    "eslint-config-space-single": "^0.3.1",
+    "eslint-plugin-mocha": "4.11.0",
     "gulp-format-md": "^1.0.0",
     "husky": "^0.14.3",
     "istanbul": "^0.4.5",
-    "mocha": "^3.2.0"
+    "mocha": "5.0.1"
   },
   "engines": {
     "node": ">=7.2"
