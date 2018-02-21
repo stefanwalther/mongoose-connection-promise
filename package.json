@@ -27,7 +27,7 @@
     "precommit": "npm run docs"
   },
   "dependencies": {
-    "mongoose": "4.13.11",
+    "mongoose": "^5.0.6",
     "winster": "^0.2.9"
   },
   "files": [
