@@ -24,7 +24,7 @@
     "test-coverage": "istanbul cover node_modules/.bin/_mocha  --require ./test/mocha.conf.js -- -- -u exports -R spec test/**/* && codecov",
     "test:integration": "mocha './test/integration/**/*.spec.js' --require './test/mocha.conf.js' --timeout 6000",
     "test:unit": "mocha './test/unit/**/*.spec.js' --require './test/mocha.conf.js'",
-    "precommit": "npm run docs"
+    "precommit": "npm run lint"
   },
   "dependencies": {
     "mongoose": "^5.0.6",
