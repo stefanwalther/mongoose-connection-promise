@@ -27,7 +27,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "mongoose": "~4.13.11",
+    "mongoose": "<5.0",
     "winster": "^0.2.9"
   },
   "files": [
