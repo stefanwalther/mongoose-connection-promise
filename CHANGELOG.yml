@@ -1,3 +1,8 @@
+v0.2.3:
+  date: "2018-02-22"
+  changes:
+    - "Update various dependencies"
+    - "Add deprecation notice for mongoose > 5.0"
 v0.2.1:
   date: "2017-08-08"
   enhancements:
