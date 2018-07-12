@@ -19,6 +19,7 @@ coverage
 # npm
 node_modules
 npm-debug.log
+package-lock.json
 
 # misc
 _gh_pages
