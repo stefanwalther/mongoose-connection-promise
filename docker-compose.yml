@@ -2,6 +2,6 @@ version: '2'
 services:
 
   mongo:
-    image: mongo:latest@sha256:84f9f4f66809872d952cdc33946d72df6a02e1e8ee00529e5ccdea46dd08a84f
+    image: mongo:latest@sha256:50d27960830323871b0a93ce076b3bd2c56f95fa5976c993211140c44f26c9bd
     ports:
       - 27017:27017
