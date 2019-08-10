@@ -43,7 +43,7 @@
     "gulp-format-md": "1.0.0",
     "husky": "0.14.3",
     "istanbul": "0.4.5",
-    "mocha": "5.2.0"
+    "mocha": "6.2.0"
   },
   "verb": {
     "run": true,
